@@ -1,0 +1,535 @@
+lemma,n_forms,examples
+100%,1,100%
+absolutely,1,absolutely
+accept,3,"accept, accepted, accepting"
+accommodate,3,"accommodate, accommodated, accommodating"
+accompany,1,accompany
+accomplish,3,"accomplish, accomplished, accomplishing"
+accountability,1,accountability
+accountable,1,accountable
+achieve,3,"achieve, achieved, achieving"
+acknowledge,2,"acknowledge, acknowledged"
+acknowleding,1,acknowleding
+act,3,"act, acted, acting"
+actively,1,actively
+acutely,1,acutely
+adapt,3,"adapt, adapted, adapting"
+address,3,"address, addressed, addressing"
+adept,1,adept
+admit,3,"admit, admitted, admitting"
+advacing,1,advacing
+advance,2,"advance, advanced"
+advise,3,"advise, advised, advising"
+advocate,3,"advocate, advocated, advocating"
+aid,3,"aid, aided, aiding"
+align,1,align
+all,1,all
+always,1,always
+ambitious,1,ambitious
+amend,3,"amend, amended, amending"
+analyze,3,"analyze, analyzed, analyzing"
+anticipate,1,anticipate
+apex,1,apex
+apologize,3,"apologize, apologized, apologizing"
+apply,1,apply
+appreciate,3,"appreciate, appreciated, appreciating"
+approach,1,approach
+appropriate,1,appropriate
+approve,1,approve
+arrange,3,"arrange, arranged, arranging"
+ask,3,"ask, asked, asking"
+assert,3,"assert, asserted, asserting"
+assess,3,"assess, assessed, assessing"
+assign,2,"assign, assigning"
+assis,1,assis
+assist,3,"assist, assisted, assisting"
+assure,1,assured
+assuredly,1,assuredly
+authentic,1,authentic
+authorize,1,authorize
+balance,3,"balance, balanced, balancing"
+befriend,3,"befriend, befriended, befriending"
+belong,1,belong
+bond,3,"bond, bonded, bonding"
+boost,3,"boost, boosted, boosting"
+brainstorm,1,brainstorm
+bridge,3,"bridge, bridged, bridging"
+build,1,build
+calm,3,"calm, calmed, calming"
+candid,1,candid
+capable,1,capable
+care,3,"care, cared, caring"
+categorically,1,categorically
+celebrate,3,"celebrate, celebrated, celebrating"
+certainly,1,certainly
+certify,1,certify
+challenge,3,"challenge, challenged, challenging"
+champion,3,"champion, championed, championing"
+check,3,"check, checked, checking"
+cheer,3,"cheer, cheered, cheering"
+claim,1,claim
+clarify,3,"clarified, clarify, clarifying"
+clear,1,clear
+clearly,1,clearly
+coach,3,"coach, coached, coaching"
+cohesive,1,cohesive
+collaborate,3,"collaborate, collaborated, collaborating"
+comfort,3,"comfort, comforted, comforting"
+comfortable,1,comfortable
+command,3,"command, commanded, commanding"
+commend,3,"commend, commended, commending"
+commit,3,"commit, committed, committing"
+communicate,3,"communicate, communicated, communicating"
+compete,1,compete
+competent,1,competent
+complete,3,"complete, completed, completing"
+completely,1,completely
+comprehensive,1,comprehensive
+comprehensively,1,comprehensively
+compromise,3,"compromise, compromised, compromising"
+concede,3,"concede, conceded, conceding"
+concern,1,concerns
+confident,1,confident
+confidently,1,confidently
+confront,3,"confront, confronted, confronting"
+connect,2,"connect, connecting"
+conscientious,1,conscientious
+consensus,1,consensus
+consider,3,"consider, considered, considering"
+considerably,1,considerably
+consistent,1,consistent
+consistently,1,consistently
+console,1,console
+constantly,1,constantly
+consult,3,"consult, consulted, consulting"
+continously,1,continously
+contribute,3,"contribute, contributed, contributing"
+control,3,"control, controlled, controlling"
+convey,3,"convey, conveyed, conveying"
+convince,1,convinced
+cooperate,3,"cooperate, cooperated, cooperating"
+coordinate,3,"coordinate, coordinated, coordinating"
+correct,3,"correct, corrected, correcting"
+counsel,3,"counsel, counseled, counseling"
+courteous,1,courteous
+critically,1,critically
+crucial,1,crucial
+decide,3,"decide, decided, deciding"
+decidedly,1,decidedly
+decision,1,decision
+dedicate,3,"dedicate, dedicated, dedicating"
+deeply,1,deeply
+deescalate,1,deescalate
+defend,3,"defend, defended, defending"
+defer,3,"defer, deferred, deferring"
+definite,1,definite
+definitely,1,definitely
+defuse,2,"defused, defusing"
+delegate,3,"delegate, delegated, delegating"
+deliver,3,"deliver, delivered, delivering"
+demand,3,"demand, demanded, demanding"
+demonstrate,1,demonstrate
+dependable,1,dependable
+design,3,"design, designed, designing"
+detail,1,detailed
+determine,3,"determine, determined, determining"
+develop,1,develop
+development,1,development
+devote,3,"devote, devoted, devoting"
+diagnose,3,"diagnose, diagnosed, diagnosing"
+dignify,1,dignified
+direct,3,"direct, directed, directing"
+directly,1,directly
+disclose,3,"disclose, disclosed, disclosing"
+discuss,3,"discuss, discussed, discussing"
+distinctly,1,distinctly
+dominate,1,dominate
+dramatically,1,dramatically
+drive,3,"drive, driving, drove"
+ease,3,"ease, eased, easing"
+effectively,1,effectively
+efficiently,1,efficiently
+embody,1,embody
+embrace,3,"embrace, embraced, embracing"
+empathize,3,"empathize, empathized, empathizing"
+empathy,1,empathy
+emphasize,1,emphasize
+empower,3,"empower, empowered, empowering"
+enable,3,"enable, enabled, enabling"
+enact,1,enact
+encompass,1,encompassing
+encourage,3,"encourage, encouraged, encouraging"
+endeavor,3,"endeavor, endeavored, endeavoring"
+enforce,3,"enforce, enforced, enforcing"
+engage,3,"engage, engaged, engaging"
+enhance,3,"enhance, enhanced, enhancing"
+enormously,1,enormously
+ensure,3,"ensure, ensured, ensuring"
+entire,1,entire
+entirely,1,entirely
+environment,1,environment
+equalize,3,"equalize, equalized, equalizing"
+equitable,1,equitable
+escalate,3,"escalate, escalated, escalating"
+especially,1,especially
+essential,1,essential
+establish,3,"establish, established, establishing"
+ethical,1,ethical
+evaluate,3,"evaluate, evaluated, evaluating"
+ever,1,ever
+every,1,every
+everyone,1,everyone
+evidently,1,evidently
+exceed,3,"exceed, exceeded, exceeding"
+exceedingly,1,exceedingly
+excel,3,"excel, excelled, excelling"
+exceptional,1,exceptional
+exceptionally,1,exceptionally
+exclusively,1,exclusively
+execute,3,"execute, executed, executing"
+executive,1,executive
+exemplary,1,exemplary
+exemplify,1,exemplify
+exhaustive,1,exhaustive
+expand,1,expand
+expeditiously,1,expeditiously
+experience,1,experienced
+expert,1,expert
+explain,3,"explain, explained, explaining"
+express,3,"express, expressed, expressing"
+extend,1,extend
+extensively,1,extensively
+extraordinarily,1,extraordinarily
+extraordinary,1,extraordinary
+extremely,1,extremely
+facilitate,3,"facilitate, facilitated, facilitating"
+fair,1,fair
+fairly,1,fairly
+fairness,1,fairness
+faithful,1,faithful
+fast,1,fast
+feedback,1,feedback
+feeling,1,feelings
+fine,1,finest
+flawless,1,flawless
+flexible,1,flexible
+foremost,1,foremost
+forever,1,forever
+forthright,1,forthright
+forthwith,1,forthwith
+foster,1,foster
+full,1,full
+fully,1,fully
+fundamentally,1,fundamentally
+genuine,1,genuine
+goal,1,goals
+good,2,"best, good"
+great,1,greatest
+greet,3,"greet, greeted, greeting"
+grow,2,"grow, growing"
+guarantee,3,"guarantee, guaranteed, guaranteeing"
+guide,3,"guide, guided, guiding"
+handle,3,"handle, handled, handling"
+harmonize,1,harmonize
+hastily,1,hastily
+hear,3,"hear, heard, hearing"
+helm,1,helm
+help,3,"help, helped, helping"
+high,1,highest
+highly,1,highly
+holistic,1,holistic
+honest,1,honest
+honor,3,"honor, honored, honoring"
+honorbale,1,honorbale
+ideal,1,ideal
+identify,1,identify
+immediate,1,immediate
+immediately,1,immediately
+immensely,1,immensely
+impartial,1,impartial
+impeccable,1,impeccable
+implement,3,"implement, implemented, implementing"
+improve,3,"improve, improved, improving"
+include,3,"include, included, including"
+inclusive,1,inclusive
+incomparable,1,incomparable
+incontrovertibly,1,incontrovertibly
+increase,3,"increase, increased, increasing"
+incredibly,1,incredibly
+indisuptably,1,indisuptably
+indubitably,1,indubitably
+influence,1,influence
+inform,3,"inform, informed, informing"
+initiate,3,"initiate, initiated, initiating"
+initiative,1,initiative
+innovative,1,innovative
+input,1,input
+insist,3,"insist, insisted, insisting"
+inspect,3,"inspect, inspected, inspecting"
+inspire,3,"inspire, inspired, inspiring"
+instantly,1,instantly
+integrity,1,integrity
+intensely,1,intensely
+intervene,3,"intervene, intervened, intervening"
+intitiate,1,intitiate
+invariably,1,invariably
+investigate,3,"investigate, investigated, investigating"
+invite,3,"invite, invited, inviting"
+involve,3,"involve, involved, involving"
+irrefutably,1,irrefutably
+join,3,"join, joined, joining"
+judicious,1,judicious
+just,1,just
+justify,3,"justified, justify, justifying"
+key,1,key
+launch,1,launch
+lead,3,"lead, leading, led"
+learn,3,"learn, learned, learning"
+listen,3,"listen, listened, listening"
+loyal,1,loyal
+maintain,3,"maintain, maintained, maintaining"
+manage,3,"manage, managed, managing"
+manifestly,1,manifestly
+markedly,1,markedly
+master,3,"master, mastered, mastering"
+maximize,3,"maximize, maximized, maximizing"
+maximum,1,maximum
+mediate,3,"mediate, mediated, mediating"
+mentor,3,"mentor, mentored, mentoring"
+meticulous,1,meticulous
+model,1,model
+monitor,3,"monitor, monitored, monitoring"
+moral,1,moral
+motivate,3,"motivate, motivated, motivating"
+navigate,1,navigate
+negotiate,3,"negotiate, negotiated, negotiating"
+never,1,never
+noble,1,noble
+none,1,none
+notably,1,notably
+nurture,3,"nurture, nurtured, nurturing"
+objective,1,objective
+obviously,1,obviously
+offer,1,offer
+open,1,open
+openly,1,openly
+optimal,1,optimal
+optimize,3,"optimize, optimized, optimizing"
+organize,3,"organize, organized, organizing"
+outline,3,"outline, outlined, outlining"
+outperfom,1,outperfom
+outperform,3,"outperform, outperformed, outperforming"
+outstanding,1,outstanding
+overall,1,overall
+oversee,1,oversee
+overssing,1,overssing
+own,3,"own, owned, owning"
+ownership,1,ownership
+pacify,3,"pacified, pacify, pacifying"
+paramount,1,paramount
+participate,3,"participate, participated, participating"
+particularly,1,particularly
+partner,3,"partner, partnered, partnering"
+patently,1,patently
+patience,1,patience
+patient,1,patient
+peak,1,peak
+peerless,1,peerless
+perfect,1,perfect
+perfectly,1,perfectly
+perpetually,1,perpetually
+perserverant,1,perserverant
+persistent,1,persistent
+perspective,1,perspective
+pinnacle,1,pinnacle
+pivotal,1,pivotal
+plainly,1,plainly
+plan,3,"plan, planned, planning"
+pledge,3,"pledge, pledged, pledging"
+positive,1,positive
+positively,1,positively
+praise,3,"praise, praised, praising"
+preeminent,1,preeminent
+premier,1,premier
+prepare,3,"prepare, prepared, preparing"
+preserve,3,"preserve, preserved, preserving"
+prevent,1,prevent
+pride,1,pride
+principled,1,principled
+prioritize,3,"prioritize, prioritized, prioritizing"
+proactive,1,proactive
+proactively,1,proactively
+process,1,process
+produce,3,"produce, produced, producing"
+productive,1,productive
+productivity,1,productivity
+professional,1,professional
+proficient,1,proficient
+profoundly,1,profoundly
+progress,1,progress
+promise,3,"promise, promised, promising"
+promptly,1,promptly
+proper,1,proper
+protect,3,"protect, protected, protecting"
+proud,1,proud
+prove,1,proven
+provide,1,provide
+prudent,1,prudent
+punctual,1,punctual
+purely,1,purely
+pursue,3,"pursue, pursued, pursuing"
+push,3,"push, pushed, pushing"
+qualify,1,qualified
+quality,1,quality
+quickly,1,quickly
+quintessential,1,quintessential
+radically,1,radically
+rapidly,1,rapidly
+rational,1,rational
+reasonable,1,reasonable
+reassure,3,"reassure, reassured, reassuring"
+recognize,3,"recognize, recognized, recognizing"
+reconcile,3,"reconcile, reconciled, reconciling"
+rectify,3,"rectified, rectify, rectifying"
+refine,1,refine
+regret,3,"regret, regretted, regretting"
+relate,3,"relate, related, relating"
+relentless,1,relentless
+reliable,1,reliable
+remarkable,1,remarkable
+remarkably,1,remarkably
+remedy,3,"remedied, remedy, remedying"
+repair,3,"repair, repaired, repairing"
+require,3,"require, required, requiring"
+resilient,1,resilient
+resolute,1,resolute
+resolve,3,"resolve, resolved, resolving"
+respect,3,"respect, respected, respecting"
+respectful,1,respectful
+respectfully,1,respectfully
+respond,1,respond
+responsibility,1,responsibility
+responsible,1,responsible
+ressure,1,ressure
+restore,3,"restore, restored, restoring"
+result,1,results
+review,3,"review, reviewed, reviewing"
+revise,1,revise
+right,1,right
+righteous,1,righteous
+rigorous,1,rigorous
+safe,1,safe
+safeguard,3,"safeguard, safeguarded, safeguarding"
+schedule,3,"schedule, scheduled, scheduling"
+scrupulous,1,scrupulous
+season,1,seasoned
+seek,1,seek
+sensible,1,sensible
+serve,3,"serve, served, serving"
+set,2,"set, setting"
+share,3,"share, shared, sharing"
+significantly,1,significantly
+signularly,1,signularly
+sincere,1,sincere
+skill,1,skilled
+smooth,3,"smooth, smoothed, smoothing"
+solely,1,solely
+solicit,3,"solicit, solicited, soliciting"
+solidify,1,solidify
+solve,3,"solve, solved, solving"
+sorry,1,sorry
+spearhead,3,"spearhead, spearheaded, spearheading"
+steadfast,1,steadfast
+steer,3,"steer, steered, steering"
+stirkingly,1,stirkingly
+straightaway,1,straightaway
+straightforward,1,straightforward
+strategize,3,"strategize, strategized, strategizing"
+streamline,3,"streamline, streamlined, streamlining"
+strive,3,"strive, striving, strove"
+strong,2,"strong, strongest"
+structure,3,"structure, structured, structuring"
+substantially,1,substantially
+succeed,3,"succeed, succeeded, succeeding"
+successful,1,successful
+superior,1,superior
+supervise,3,"supervise, supervised, supervising"
+support,3,"support, supported, supporting"
+supportive,1,supportive
+supreme,1,supreme
+surely,1,surely
+surpass,3,"surpass, surpassed, surpassing"
+surpoass,1,surpoass
+sustainable,1,sustainable
+switfly,1,switfly
+systematic,1,systematic
+tackle,3,"tackle, tackled, tackling"
+talk,3,"talk, talked, talking"
+target,3,"target, targeted, targeting"
+team,3,"team, teamed, teaming"
+teamwork,1,teamwork
+tenacious,1,tenacious
+tend,3,"tend, tended, tending"
+thank,3,"thank, thanked, thanking"
+thorough,1,thorough
+thoroughly,1,thoroughly
+thrive,3,"thrive, thrived, thriving"
+tireless,1,tireless
+tirelessly,1,tirelessly
+together,1,together
+top,1,top
+total,1,total
+totally,1,totally
+touchbase,1,touchbase
+track,3,"track, tracked, tracking"
+transparent,1,transparent
+tremendously,1,tremendously
+troubleshoot,1,troubleshoot
+troublesot,1,troublesot
+trust,1,trust
+trustworthy,1,trustworthy
+truthful,1,truthful
+ultimate,1,ultimate
+unbiased,1,unbiased
+unconditionally,1,unconditionally
+undeniably,1,undeniably
+understand,3,"understand, understanding, understood"
+undoubtedly,1,undoubtedly
+unequivocally,1,unequivocally
+unfailingly,1,unfailingly
+uniquely,1,uniquely
+unite,3,"unite, united, uniting"
+universally,1,universally
+unmatched,1,unmatched
+unparalleled,1,unparalleled
+unprecedented,1,unprecedented
+unquestionably,1,unquestionably
+unrivaled,1,unrivaled
+unsurpassed,1,unsurpassed
+unwavering,1,unwavering
+update,3,"update, updated, updating"
+uphold,3,"upheld, uphold, upholding"
+uplift,3,"uplift, uplifted, uplifting"
+upright,1,upright
+urgently,1,urgently
+utilize,1,utilize
+utmost,1,utmost
+utterly,1,utterly
+validate,3,"validate, validated, validating"
+value,3,"value, valued, valuing"
+vastly,1,vastly
+verify,3,"verified, verify, verifying"
+very,1,very
+veteran,1,veteran
+virtuous,1,virtuous
+vitally,1,vitally
+volunteer,3,"volunteer, volunteered, volunteering"
+vow,3,"vow, vowed, vowing"
+warm,1,warm
+welcome,3,"welcome, welcomed, welcoming"
+whole,1,whole
+wholly,1,wholly
+willingness,1,willingness
+win,1,win
+yield,3,"yield, yielded, yielding"
+zenith,1,zenith
