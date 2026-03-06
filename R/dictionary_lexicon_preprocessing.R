@@ -2,7 +2,7 @@
 # Lexicon preprocessing utilities                                             #
 # - Normalize terms                                                           #
 # - Flag multiword phrases                                                    #
-# - Seperate single words from phrases                                        #
+# - Separate single words from phrases                                        #
 ###############################################################################
 
 # preprocess, normalize, remove duplicates

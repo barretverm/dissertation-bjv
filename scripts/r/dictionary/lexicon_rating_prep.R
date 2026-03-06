@@ -5,13 +5,13 @@ library(stringr)
 library(readr)
 library(textstem)
 
-source('R/dictionary/lexicon_preprocessing.R')
+source('R/dictionary_lexicon_preprocessing.R')
 
 # IMPORT DATA -------------------------------------------------------------
 
 df <- read_csv(
   "data/raw/raw_combined_wordlists.csv",
-  col_names = c("AIM", "CIM", "IM"),
+  col_names = T,
   na = ""
 )
 
@@ -57,7 +57,3 @@ head(rating_units)
 
 write_csv(rating_units, "data/processed/rating_lemmas.csv")     # single words
 write_csv(prepped$phrases, "data/processed/rating_phrases.csv") # phrases
-
-
-
-
