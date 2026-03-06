@@ -1,4 +1,5 @@
 lemma,n_forms,examples
+0%,1,0%
 100%,1,100%
 absolutely,1,absolutely
 accept,3,"accept, accepted, accepting"
@@ -101,6 +102,7 @@ consistent,1,consistent
 consistently,1,consistently
 console,1,console
 constantly,1,constantly
+constructive,1,constructive
 consult,3,"consult, consulted, consulting"
 continously,1,continously
 contribute,3,"contribute, contributed, contributing"
@@ -112,6 +114,7 @@ coordinate,3,"coordinate, coordinated, coordinating"
 correct,3,"correct, corrected, correcting"
 counsel,3,"counsel, counseled, counseling"
 courteous,1,courteous
+credible,1,credible
 critically,1,critically
 crucial,1,crucial
 decide,3,"decide, decided, deciding"
@@ -138,6 +141,7 @@ development,1,development
 devote,3,"devote, devoted, devoting"
 diagnose,3,"diagnose, diagnosed, diagnosing"
 dignify,1,dignified
+diligent,1,diligent
 direct,3,"direct, directed, directing"
 directly,1,directly
 disclose,3,"disclose, disclosed, disclosing"
@@ -271,7 +275,6 @@ instantly,1,instantly
 integrity,1,integrity
 intensely,1,intensely
 intervene,3,"intervene, intervened, intervening"
-intitiate,1,intitiate
 invariably,1,invariably
 investigate,3,"investigate, investigated, investigating"
 invite,3,"invite, invited, inviting"
@@ -338,7 +341,7 @@ peerless,1,peerless
 perfect,1,perfect
 perfectly,1,perfectly
 perpetually,1,perpetually
-perserverant,1,perserverant
+perseverant,1,perseverant
 persistent,1,persistent
 perspective,1,perspective
 pinnacle,1,pinnacle
@@ -392,6 +395,7 @@ recognize,3,"recognize, recognized, recognizing"
 reconcile,3,"reconcile, reconciled, reconciling"
 rectify,3,"rectified, rectify, rectifying"
 refine,1,refine
+reflect,1,reflect
 regret,3,"regret, regretted, regretting"
 relate,3,"relate, related, relating"
 relentless,1,relentless
@@ -453,6 +457,7 @@ substantially,1,substantially
 succeed,3,"succeed, succeeded, succeeding"
 successful,1,successful
 superior,1,superior
+supersede,1,supersede
 supervise,3,"supervise, supervised, supervising"
 support,3,"support, supported, supporting"
 supportive,1,supportive
