@@ -1,9 +1,9 @@
-###############################################################################
-# Lexicon preprocessing utilities                                             #
-# - Normalize terms                                                           #
-# - Flag multiword phrases                                                    #
-# - Separate single words from phrases                                        #
-###############################################################################
+#############################################################################~
+# Lexicon preprocessing utilities                                             
+# - Normalize terms                                                           
+# - Flag multiword phrases                                                    
+# - Separate single words from phrases                                        
+#############################################################################~
 
 # preprocess, normalize, remove duplicates
 prep_lexicon <- function(x) {
@@ -21,9 +21,8 @@ prep_lexicon <- function(x) {
       n_tokens = stringr::str_count(norm, "\\S+") ,
       is_phrase = n_tokens >= 2
     ) %>%
-    dplyr::distinct(norm, .keep_all = TRUE) %>%   # de-dupe by normalized form
+    dplyr::distinct(norm, .keep_all = T) %>%   # de-dupe by normalized form
     dplyr::select(raw_term, norm, n_tokens, is_phrase)
-  
 }
 
 # wrapper function to separate single and multiword phrases
@@ -43,5 +42,4 @@ separate_words_phrases <- function(x) {
     single_words = single_words,
     phrases = phrases
   )
-  
 }
