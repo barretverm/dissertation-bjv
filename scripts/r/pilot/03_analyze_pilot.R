@@ -1,5 +1,5 @@
 #############################################################################~
-# ANALYZE MAIN DATA
+# ANALYZE PILOT DATA
 #############################################################################~
 
 library(dplyr)
@@ -96,6 +96,7 @@ df_anova <- df |>
     )
   )
 
+# convert to long format
 df_long <- df_anova |>
   pivot_longer(
     cols = c(exp_AM_mean, exp_CM_mean, cont_AM_mean, cont_CM_mean),
@@ -110,6 +111,7 @@ df_long <- df_anova |>
     participant    = factor(participant)
   )
 
+# run anova
 mixed_mod <- aov(
   score ~ classification * dimension * source +
     Error(participant / (dimension * source)),
