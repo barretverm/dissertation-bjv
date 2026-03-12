@@ -26,10 +26,10 @@ C1 = Child Care Provider<br>
 C2 = Social & Human Service Assistants<br>
 
 **Personality Dimension**<br>
-C = Conscientiousness<br>
-E = Extraversion<br>
-A = Agreeableness<br>
-N = Neuroticism<br>
+C = Conscientiousness Text<br>
+E = Extraversion Text<br>
+A = Agreeableness Text<br>
+N = Neuroticism Text<br>
 
 **BIMI Subdimension**<br>
 CM = Communal Management<br>
