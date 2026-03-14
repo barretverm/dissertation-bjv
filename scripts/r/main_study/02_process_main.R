@@ -10,7 +10,7 @@ library(dplyr)
 library(tidyr)
 
 in_path  <- "data/processed/main_clean.rds"
-out_path <- "data/processed/main_scored.rds"
+validation_path <- "data/processed/main_scored.rds"
 
 df <- readRDS(in_path)
 df_questions <- df$questions # pull questions from list
@@ -178,6 +178,34 @@ df_long_final <- df_main_all |>
     BIMI_mean
   )
 
+
+# SPLIT INTO FOUR TRAINING DATASETS ---------------------------------------
+# splitting into: 
+
+# 1) agentic & AM
+df_agentic_AM <- df_long_final |>
+  filter(classification == "agentic" & dimension == "AM")
+
+# 2) agentic & CM
+df_agentic_CM <- df_long_final |>
+  filter(classification == "agentic" & dimension == "CM")
+
+# 3) communal & AM
+df_communal_AM <- df_long_final |>
+  filter(classification == "communal" & dimension == "AM")
+
+# 4) communal & CM
+df_communal_CM <- df_long_final |>
+  filter(classification == "communal" & dimension == "CM")
+
+
 # EXPORT ------------------------------------------------------------------
 
-saveRDS(df_long_final, out_path)
+# for validation checks
+saveRDS(df_long_final, validation_path)
+
+# for analysis requiring external GPUs
+write.csv(df_agentic_AM,  "data/processed/agentic_AM.csv",  row.names = F)
+write.csv(df_agentic_CM,  "data/processed/agentic_CM.csv",  row.names = F)
+write.csv(df_communal_AM, "data/processed/communal_AM.csv", row.names = F)
+write.csv(df_communal_CM, "data/processed/communal_CM.csv", row.names = F)
