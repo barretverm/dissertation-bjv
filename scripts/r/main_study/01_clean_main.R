@@ -34,7 +34,7 @@ df <- df |>
 df_clean <- df |>
   filter(!is.na(Q_RecaptchaScore)) |>
   filter(Q_RecaptchaScore > 0.5) |> # remove Q-RecaptchaScore < .5 (see README)
-  select(!starts_with("AI_warning")) |>
+  #select(!starts_with("AI_warning")) |>
   filter(is.na(Q_TerminateFlag) | Q_TerminateFlag != "PoorQuality")
 
 # SEPARATE TIME AND QUESTION VARIABLES ------------------------------------
