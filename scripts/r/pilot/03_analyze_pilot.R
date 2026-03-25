@@ -6,7 +6,7 @@ library(dplyr)
 library(effectsize)
 library(tidyr)
 library(ggplot2)
-source("R/03_analyze_pilot_utilities.R")
+source("R/ttest_utilities.R")
 
 in_path <- "data/processed/pilot_scored.rds"
 
