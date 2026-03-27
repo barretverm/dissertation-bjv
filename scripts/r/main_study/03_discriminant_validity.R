@@ -1,20 +1,27 @@
-#############################################################################>
+#############################################################################~
 # VALIDATION STUDY
 # - Evaluate discriminant validity of main study data
-#############################################################################>
+#############################################################################~
+
 library(dplyr)
 library(readr)
 library(rstatix)
 library(ggplot2)
 library(psych)
+library(welchADF)
+library(effectsize)
+library(patchwork)
 source("R/ttest_utilities.R")
+source("R/03_discriminant_validity_utilities.R")
 
-# IMPORT DATA ----
+# IMPORT DATA -------------------------------------------------------------
 
 agentic_AM_path <- "outputs/deberta-v3-small/agentic_AM"
 agentic_CM_path <- "outputs/deberta-v3-small/agentic_CM"
 communal_AM_path <- "outputs/deberta-v3-small/communal_AM"
 communal_CM_path <- "outputs/deberta-v3-small/communal_CM"
+
+out_path <- "data/processed/descriptive_data.rds"
 
 # SJTs - all
 agentic_AM_SJT_all   <- read_csv(
@@ -46,9 +53,10 @@ communal_AM_SJT_CM  <- read_csv(
 communal_CM_SJT_CM  <- read_csv(
   file.path(communal_CM_path, 'predictions_communal_CM_SJT_CM_v1_kfold.csv'))
 
-# ASSUMPTION CHECKS ----
 
-# run normality tests across all datasets
+# ASSUMPTION CHECKS -------------------------------------------------------
+
+# normality
 normality_results <- bind_rows(
   test_normality(agentic_AM_SJT_all,  "agentic_AM_SJT_all"),
   test_normality(agentic_CM_SJT_all,  "agentic_CM_SJT_all"),
@@ -102,8 +110,53 @@ levene_results_SJT_all
 levene_results_SJT_AM
 levene_results_SJT_CM
 
+# probe variance further - histograms
+plot_variance_hist(agentic_AM_SJT_all,  agentic_CM_SJT_all,  
+                   "AM Subscale", "CM Subscale", 
+                   title = "Agentic Job Types"
+                   )
+plot_variance_hist(communal_AM_SJT_all, communal_CM_SJT_all, 
+                   "AM Subscale", "CM Subscale",
+                   title = "Communal Job Types"
+                   )
 
-# T-TESTS ----
+# probe variance further - box plots
+plot_variance_box(agentic_AM_SJT_all,  agentic_CM_SJT_all,  
+                  "AM Subscale", "CM Subscale",
+                  title = "Agentic Job Types"
+                  )
+plot_variance_box(communal_AM_SJT_all, communal_CM_SJT_all, 
+                  "AM Subscale", "CM Subscale",
+                  title = "Communal Job Types"
+                  )
+
+# stack plots for export
+p1 <- plot_variance_hist(agentic_AM_SJT_all,  agentic_CM_SJT_all,  
+                        "AM Subscale", "CM Subscale",
+                        title = "Agentic Job Types"
+)
+p2 <- plot_variance_hist(communal_AM_SJT_all, communal_CM_SJT_all, 
+                        "AM Subscale", "CM Subscale",
+                        title = "Communal Job Types"
+)
+
+(p1 / p2)
+
+p1 <- plot_variance_box(agentic_AM_SJT_all,  agentic_CM_SJT_all,  
+                        "AM Subscale", "CM Subscale",
+                        title = "Agentic Job Types"
+)
+p2 <- plot_variance_box(communal_AM_SJT_all, communal_CM_SJT_all, 
+                        "AM Subscale", "CM Subscale",
+                        title = "Communal Job Types"
+)
+
+(p1 / p2) &
+  theme(legend.position = "none")
+
+# see descriptive_statistics.R for demographic breakdowns
+
+# T-TESTS -----------------------------------------------------------------
 
 # SJTs - all
 ttest_results_SJT_all <- bind_rows(
@@ -180,7 +233,8 @@ ttest_results_SJT_CM <- bind_rows(
 )
 ttest_results_SJT_CM
 
-# ANOVA ----
+
+# REGULAR FACTORIAL ANOVA -------------------------------------------------
 
 # SJTS - all
 ANOVA_SJT_all <- bind_rows(
@@ -247,3 +301,107 @@ plot_interaction(
   ANOVA_SJT_CM, "predicted_BIMI", "Predicted BIMI: Classification x Dimension (SJT_CM)")
 plot_interaction(
   ANOVA_SJT_CM, "actual_BIMI",    "Actual BIMI: Classification x Dimension (SJT_CM)")
+
+# WELCH'S FACTORIAL ANOVA -------------------------------------------------
+
+# SJTS - all
+ANOVA_SJT_all <- bind_rows(
+  agentic_AM_SJT_all,
+  agentic_CM_SJT_all,
+  communal_AM_SJT_all,
+  communal_CM_SJT_all
+)
+
+summary(welchADF.test(
+  actual_BIMI ~ classification * dimension, 
+  data = ANOVA_SJT_all)
+)
+
+summary(welchADF.test(
+  predicted_BIMI ~ classification * dimension, 
+  data = ANOVA_SJT_all)
+)
+
+# calculate effect sizes
+agentic_all  <- ANOVA_SJT_all %>% filter(dimension == "AM")
+communal_all <- ANOVA_SJT_all %>% filter(dimension == "CM")
+
+hedges_g(actual_BIMI    ~ classification, data = agentic_all)
+hedges_g(actual_BIMI    ~ classification, data = communal_all)
+
+hedges_g(predicted_BIMI ~ classification, data = agentic_all)
+hedges_g(predicted_BIMI ~ classification, data = communal_all)
+
+# SJTS - AM
+ANOVA_SJT_AM <- bind_rows(
+  agentic_AM_SJT_AM,
+  agentic_CM_SJT_AM,
+  communal_AM_SJT_AM,
+  communal_CM_SJT_AM
+)
+
+summary(welchADF.test(
+  predicted_BIMI ~ classification * dimension, 
+  data = ANOVA_SJT_AM)
+)
+
+# calculate effect sizes
+agentic_AM  <- ANOVA_SJT_AM %>% filter(dimension == "AM")
+communal_AM <- ANOVA_SJT_AM %>% filter(dimension == "CM")
+
+hedges_g(predicted_BIMI ~ classification, data = agentic_AM)
+hedges_g(predicted_BIMI ~ classification, data = communal_AM)
+
+# SJTS - CM
+ANOVA_SJT_CM <- bind_rows(
+  agentic_AM_SJT_CM,
+  agentic_CM_SJT_CM,
+  communal_AM_SJT_CM,
+  communal_CM_SJT_CM
+)
+
+summary(welchADF.test(
+  predicted_BIMI ~ classification * dimension, 
+  data = ANOVA_SJT_CM)
+)
+
+# calculate effect size
+agentic_CM  <- ANOVA_SJT_CM %>% filter(dimension == "AM")
+communal_CM <- ANOVA_SJT_CM %>% filter(dimension == "CM")
+
+hedges_g(predicted_BIMI ~ classification, data = agentic_CM)
+hedges_g(predicted_BIMI ~ classification, data = communal_CM)
+
+# INTERACTION PLOTS -------------------------------------------------------
+
+# predicted
+p1 <- plot_interaction(
+  ANOVA_SJT_all, "predicted_BIMI", "All SJTs Concatenated")
+p2 <- plot_interaction(
+  ANOVA_SJT_AM, "predicted_BIMI", "Agentic SJTs")
+p3 <- plot_interaction(
+  ANOVA_SJT_CM, "predicted_BIMI", "Communal SJTs")
+
+# combine side-by-side
+(p1 | p2 | p3 ) +
+  plot_layout(guides = "collect") +
+  plot_annotation(
+    title = "Predicted BIMI: Job Type × Dimension",
+    theme = theme(
+      plot.title = element_text(hjust = 0.5, face = "bold", size = 14)
+    )
+  ) &
+  theme(legend.position = "bottom") &
+  labs(color = "Job Type")
+
+# actual - only need a single plot since the values are the same across SJT type
+plot_interaction(
+  ANOVA_SJT_all, "actual_BIMI", "Actual BIMI Scores: Job Type x Dimension")
+
+# EXPORT DATA FOR DESCRIPTIVES --------------------------------------------
+# i will export one of the SJT ANOVA dateframes and match respondents by ID
+
+saveRDS(ANOVA_SJT_all, out_path)
+
+
+
