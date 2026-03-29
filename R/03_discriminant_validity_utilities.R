@@ -2,7 +2,7 @@
 # Helper functions for discriminant validity evidence (hypothesis 2)
 #############################################################################~
 
-# test normality for a single dataframe
+# NORMALITY ---------------------------------------------------------------
 test_normality <- function(df, name) {
   tibble(
     dataset   = name,
@@ -27,7 +27,9 @@ plot_qq <- function(df, name) {
     theme_minimal()
 }
 
-# run Levene's test for a pair of dataframes
+
+# LEVENE'S TEST -----------------------------------------------------------
+# for a pair of dataframes
 run_levene <- function(df1, df2, label) {
   combined <- bind_rows(
     df1 |> mutate(condition = "group1"),
@@ -38,6 +40,9 @@ run_levene <- function(df1, df2, label) {
     combined |> levene_test(actual_BIMI ~ condition)    |> mutate(test = paste0("actual_BIMI: ",    label))
   )
 }
+
+
+# PLOTS -------------------------------------------------------------------
 
 # histograms
 plot_variance_hist <- function(df1, df2, label1, label2, title = NULL) {
@@ -106,4 +111,37 @@ plot_interaction <- function(df, dv, title) {
       color = "Classification"
     ) +
     theme_minimal()
+}
+
+
+# FACTORIAL ANOVA ---------------------------------------------------------
+run_anova <- function(df, dv) {
+
+  # ensure factors are set correctly
+  df$classification <- factor(df$classification, levels = c("agentic", "communal"))
+  df$dimension      <- factor(df$dimension,      levels = c("AM", "CM"))
+  
+  # fit model
+  formula  <- as.formula(paste(dv, "~ classification * dimension"))
+  anova_model <- aov(formula, data = df)
+  
+  # print results
+  cat("\n--- ANOVA Summary ---\n")
+  print(summary(anova_model))
+  
+  cat("\n--- Regression Coefficients ---\n")
+  print(summary.lm(anova_model))
+  
+  cat("\n--- Effect Sizes ---\n")
+  print(eta_squared(anova_model))
+  print(omega_squared(anova_model))
+  
+  cat("\n--- Simple Effects ---\n")
+  emm <- emmeans(anova_model, ~ classification | dimension)
+  print(pairs(emm))
+  print(eff_size(emm,
+                 sigma = sigma(anova_model),
+                 edf   = df.residual(anova_model)))
+  
+  invisible(anova_model)
 }
