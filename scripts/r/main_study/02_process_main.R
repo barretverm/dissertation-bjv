@@ -7,6 +7,7 @@
 #############################################################################~
 
 library(dplyr)
+library(stringr)
 library(tidyr)
 
 in_path  <- "data/processed/main_clean.rds"
@@ -32,14 +33,14 @@ df_r_coded <- df_questions |>
 df_main_scored <- df_r_coded |>
   rowwise() |>
   mutate(
-    AMJ1_SCORED_A = mean(c_across(starts_with("AMJ1_BIMI_A")), na.rm = TRUE),
-    AMJ1_SCORED_C = mean(c_across(starts_with("AMJ1_BIMI_C")), na.rm = TRUE),
-    AMJ2_SCORED_A = mean(c_across(starts_with("AMJ2_BIMI_A")), na.rm = TRUE),
-    AMJ2_SCORED_C = mean(c_across(starts_with("AMJ2_BIMI_C")), na.rm = TRUE),
-    CMJ1_SCORED_A = mean(c_across(starts_with("CMJ1_BIMI_A")), na.rm = TRUE),
-    CMJ1_SCORED_C = mean(c_across(starts_with("CMJ1_BIMI_C")), na.rm = TRUE),
-    CMJ2_SCORED_A = mean(c_across(starts_with("CMJ2_BIMI_A")), na.rm = TRUE),
-    CMJ2_SCORED_C = mean(c_across(starts_with("CMJ2_BIMI_C")), na.rm = TRUE),
+    AMJ1_SCORED_A = mean(c_across(starts_with("AMJ1_BIMI_A")), na.rm = T),
+    AMJ1_SCORED_C = mean(c_across(starts_with("AMJ1_BIMI_C")), na.rm = T),
+    AMJ2_SCORED_A = mean(c_across(starts_with("AMJ2_BIMI_A")), na.rm = T),
+    AMJ2_SCORED_C = mean(c_across(starts_with("AMJ2_BIMI_C")), na.rm = T),
+    CMJ1_SCORED_A = mean(c_across(starts_with("CMJ1_BIMI_A")), na.rm = T),
+    CMJ1_SCORED_C = mean(c_across(starts_with("CMJ1_BIMI_C")), na.rm = T),
+    CMJ2_SCORED_A = mean(c_across(starts_with("CMJ2_BIMI_A")), na.rm = T),
+    CMJ2_SCORED_C = mean(c_across(starts_with("CMJ2_BIMI_C")), na.rm = T),
   ) |>
   ungroup()
 
@@ -178,6 +179,25 @@ df_long_final <- df_main_all |>
     BIMI_mean
   )
 
+# word counts
+
+df_long_final |>
+  mutate(
+    words_SJTs_all = str_count(na_if(SJTs_all, ""), "\\S+"),
+    words_SJT_AM   = str_count(na_if(SJT_AM,   ""), "\\S+"),
+    words_SJT_CM   = str_count(na_if(SJT_CM,   ""), "\\S+")
+  ) |>
+  summarize(
+    SJTs_all_min    = min(words_SJTs_all,    na.rm = T),
+    SJTs_all_max    = max(words_SJTs_all,    na.rm = T),
+    SJTs_all_median = median(words_SJTs_all, na.rm = T),
+    SJT_AM_min      = min(words_SJT_AM,      na.rm = T),
+    SJT_AM_max      = max(words_SJT_AM,      na.rm = T),
+    SJT_AM_median   = median(words_SJT_AM,   na.rm = T),
+    SJT_CM_min      = min(words_SJT_CM,      na.rm = T),
+    SJT_CM_max      = max(words_SJT_CM,      na.rm = T),
+    SJT_CM_median   = median(words_SJT_CM,   na.rm = T)
+  )
 
 # SPLIT INTO FOUR TRAINING DATASETS ---------------------------------------
 # splitting into: 
@@ -197,7 +217,6 @@ df_communal_AM <- df_long_final |>
 # 4) communal & CM
 df_communal_CM <- df_long_final |>
   filter(classification == "communal" & dimension == "CM")
-
 
 # EXPORT ------------------------------------------------------------------
 
