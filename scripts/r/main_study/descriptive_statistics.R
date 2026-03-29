@@ -90,10 +90,13 @@ communal_demos <- communal_demos |>
 
 # using agentic only because this condition had the full sample size
 # age
+agentic_demos <- agentic_demos |>
+  mutate(age = as.numeric(age))
+
 agentic_demos |>
   summarize(
     n        = n(),
-    mean_age = round(mean(age, na.rm = T), 2),
+    median_age = round(median(age, na.rm = T), 2),
     sd_age   = round(sd(age, na.rm = T), 2),
     min_age  = min(age, na.rm = T),
     max_age  = max(age, na.rm = T)
@@ -177,7 +180,7 @@ combined <- combined |>
   ))
 
 fisher.test(table(combined$outlier_group, combined$education_collapsed),
-            simulate.p.value = TRUE, B = 10000)
+            simulate.p.value = T, B = 10000)
 
 combined |>
   count(outlier_group, education_collapsed) |>
