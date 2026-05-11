@@ -7,7 +7,6 @@ library(dplyr)
 library(readr)
 library(rstatix)
 library(ggplot2)
-library(welchADF)
 library(effectsize)
 library(patchwork)
 library(emmeans)
@@ -139,7 +138,6 @@ ANOVA_SJT_AM  <- bind_rows(agentic_AM_SJT_AM,  agentic_CM_SJT_AM,
                            communal_AM_SJT_AM,  communal_CM_SJT_AM)
 ANOVA_SJT_CM  <- bind_rows(agentic_AM_SJT_CM,  agentic_CM_SJT_CM,  
                            communal_AM_SJT_CM,  communal_CM_SJT_CM)
-## SJTS - actual ----
 
 run_anova(ANOVA_SJT_all, "actual_BIMI")      # actual scores
 run_anova(ANOVA_SJT_all, "predicted_BIMI")   # SJTs predicted scores - all
