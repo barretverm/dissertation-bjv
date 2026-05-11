@@ -51,3 +51,9 @@ df_list <- list(
 # EXPORT ------------------------------------------------------------------
 
 saveRDS(df_list, out_path)
+
+# deifentified data for OSF
+deidentified <- df |> select(-c(IPAddress, RecipientLastName, RecipientFirstName, 
+                      RecipientEmail, ExternalReference, LocationLatitude, 
+                      LocationLongitude, participantID, assignmentId))
+write_csv(deidentified, "data/processed/main_study_deidentified.csv")
