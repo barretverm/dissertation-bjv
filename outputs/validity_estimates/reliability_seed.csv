@@ -1,0 +1,4 @@
+Dictionary,N_words,Mean_within_sim,SD_within_sim,Cronbach_alpha
+AIM_seed,110,0.264,0.0944,0.9753
+CIM_seed,66,0.2539,0.0994,0.9574
+IM_seed,123,0.2721,0.1187,0.9787
