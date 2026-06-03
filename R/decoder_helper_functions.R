@@ -3,7 +3,6 @@
 #############################################################################~
 
 # Load decoder model prediction data
-
 # Character: "gpt4o", "mistral", or "llama"
 # Return named list of 12 dataframes (4 conditions × 3 SJT types)
 load_decoder_data <- function(model) {
@@ -24,7 +23,7 @@ load_decoder_data <- function(model) {
   
   # Helper to build filename
   build_path <- function(classification, dimension, sjt_type) {
-    prompt <- if (classification == "agentic") "promptAM" else "promptCM"
+    prompt <- if (dimension == "AM") "promptAM" else "promptCM"  # Fixed: was classification
     filename <- paste0("decoder_", classification, "_", dimension, "_", 
                        sjt_type, "_", prompt, "_", suffix)
     file.path(base_path, paste0(classification, "_", dimension), filename)
